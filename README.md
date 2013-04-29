@@ -11,7 +11,7 @@ Note that, generally, users cannot have more than two certificates associated wi
 
 System Requirements
 ===================
-- You will need a fairly current version of BASH on your system.
-- OpenSSL is required.
+- bash
+- OpenSSL
 
-This was written in MacOSX (10.8.3) but works just fine in Ubuntu, Debian, and RedHhat.
+This was written in MacOSX (10.8.3) but works just fine in Ubuntu, Debian, and Redhat.
