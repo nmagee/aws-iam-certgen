@@ -1,7 +1,7 @@
 !#/bin/sh
 
 tput clear
-echo -e "\r\nEnter a convenient name of the user you are creating an IAM key/cert for [use no spaces]:"
+echo -e "\r\nEnter a convenient name of the user you are creating a signing certificate for [use no spaces]:"
 read user
 
 echo -e "\r\nEnter the full path to your certificate home [i.e. /home/username/certs/]:"
@@ -18,7 +18,7 @@ openssl pkcs8 -topk8 -in ${user}-key.pem -nocrypt > ${user}-key2.pem
 mv ${user}-key2.pem ${user}-key.pem 
 
 echo -e "\r\n"
-echo -e "The ${user} key and certificate have been created. You should now copy the certificate below to paste into your AWS account security credentials:"
+echo -e "The ${user} key and certificate have been created and converted into PEM format. You should now copy the certificate below to paste (or upload directly) into your AWS account security credentials:"
 echo -e "\r\n\r\n"
 cat ${user}-cert.pem
 echo -e "\r\n\r\n"
