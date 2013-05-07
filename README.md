@@ -22,7 +22,3 @@ system requirements
 - OpenSSL
 
 This was written in MacOSX (10.8.3) but works just fine in Ubuntu, Debian, and Redhat.
-
-license
-=======
-Released under the MIT License. See the included LICENSE.txt file for details.
