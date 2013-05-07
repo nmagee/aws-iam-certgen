@@ -1,4 +1,4 @@
-aws-iam-certgen
+aws-x509-certgen
 ===============
 A simple bash script that will generate an x.509 key and signing certificate for you. This allows you to securely use the various AWS API tools [http://aws.amazon.com/developertools]. 
 
@@ -11,7 +11,7 @@ Note that, generally, users cannot have more than two certificates associated wi
 
 usage
 =====
-Run the script from the command-line, i.e. "./aws-iam/certgen.sh" and answer the prompts to name the key and certificate and a path in which to store them. Since this certificate is self-signed, you do not need to fill out any details of your organization or address (they are ignored by AWS). 
+Run the script from the command-line, i.e. "./aws-x509-certgen/certgen.sh" and answer the prompts to name the key and certificate and a path in which to store them. Since this certificate is self-signed, you do not need to fill out any details of your organization or address (they are ignored by AWS). 
 
 After running the script, your certificate will be displayed on the screen. If you are using IAM for user authentication into your AWS account, you can then paste the text of the certificate into the signing certificates section of a user account (IAM --> Users --> <your user> --> Security Credentials tab --> Signing Certificates). If you are using a standalone AWS account, go to Security Credentials --> Access Credentials --> X.509 Certificates and upload your own certificate.
 
