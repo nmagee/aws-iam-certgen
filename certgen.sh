@@ -4,6 +4,9 @@ tput clear
 echo -e "\r\nEnter a convenient name of the user you are creating a signing certificate for [use no spaces]:"
 read user
 
+echo -e "\r\nHow many days would you like this upload certificate to be valid? [i.e. 365, 90, etc.]:"
+read age
+
 echo -e "\r\nEnter the full path to your certificate home [i.e. /home/username/certs/]:"
 read path
 
@@ -13,7 +16,7 @@ read blah
 cd $path
 
 openssl genrsa 1024 > ${user}-key.pem
-openssl req -new -x509 -nodes -sha1 -days 365 -key ${user}-key.pem -outform PEM > ${user}-cert.pem
+openssl req -new -x509 -nodes -sha1 -days ${age} -key ${user}-key.pem -outform PEM > ${user}-cert.pem
 openssl pkcs8 -topk8 -in ${user}-key.pem -nocrypt > ${user}-key2.pem
 mv ${user}-key2.pem ${user}-key.pem 
 
