@@ -4,7 +4,7 @@ tput clear
 echo -e "\r\nEnter a convenient name of the user you are creating a signing certificate for [use no spaces]:"
 read user
 
-echo -e "\r\nHow many days would you like this upload certificate to be valid? [i.e. 365, 90, etc.]:"
+echo -e "\r\nHow many days would you like this upload certificate to be valid? [Default is 90]:"
 read age
 
 echo -e "\r\nEnter the full path to your certificate home [i.e. /home/username/certs/]:"
@@ -19,6 +19,11 @@ then
   cd ./
 else
   cd ${path}
+fi
+
+if [ -z ${age} ]
+then
+  age=90
 fi
 
 openssl genrsa 1024 > ${user}-key.pem
