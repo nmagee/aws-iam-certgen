@@ -30,7 +30,8 @@
       <section>
         <h3>Amazon Web Services x.509 Signing Certificate Generator</h3>
 
-<p>This is a simple bash script that will generate an x.509 key and signing certificate for you. This allows you to use the various AWS API tools securely [http://aws.amazon.com/developertools].</p>
+<p>This is a simple bash script that will generate an x.509 key and signing certificate for you. This allows you to use the <a target="_new" href="http://aws.amazon.com/developertools">various AWS API tools</a> securely.</p>
+
 <p>Currently, IAM doesn't have an API to generate signing certificates, so you must use a third-party tool such as OpenSSL to create the certificate first. AWS recommends you create an RSA key that is either 1024-bit or 2048-bit in length. The certificate can be self-signed, and the key and certificate must be in PEM format. While this process is not too complicated, this script handles it for you with only a few prompts.</p>
 
 <p>There is often confusion for AWS users about how to correctly create and install a signing certificate so that they can use the API command-line tools. This script will create key and certificate files in the proper size and formatting for upload into your AWS accouont. This is especially useful for administrators of IAM, where many users need to be supported and given API access.</p>
@@ -48,13 +49,10 @@ $ git clone git@github.com:nmagee/aws-x509-certgen.git
 
 <p>After running the script, your certificate will be displayed on the screen. If you are using IAM for user authentication into your AWS account, you can then paste the text of the certificate into the signing certificates section of a user account (IAM --> Users --> %USERNAME% --> Security Credentials tab --> Signing Certificates). If you are using a standalone AWS account, go to Security Credentials --> Access Credentials --> X.509 Certificates and upload your own certificate.</p>
 
-<h3>Authors and Contributors</h3>
+<h3>Author</h3>
 
-<p>Written by <a href="" class="user-mention">@nmagee</a>.</p>
+<p>Written by <a href="http://github.com/nmagee/" class="user-mention">@nmagee</a>.</p>
 
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/nmagee">nmagee</a></p>
