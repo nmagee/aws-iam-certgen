@@ -37,7 +37,7 @@ then
   user=signingcert
 fi
 
-openssl genrsa 1024 > ${user}-key.pem
+openssl genrsa 2048 > ${user}-key.pem
 openssl req -new -x509 -nodes -sha1 -subj "/C=US/ST=Ohio/L=Springfield/O=Dis/CN=www.example.com" -days ${age} -key ${user}-key.pem -outform PEM > ${user}-cert.pem
 openssl pkcs8 -topk8 -in ${user}-key.pem -nocrypt > ${user}-key2.pem
 mv ${user}-key2.pem ${user}-key.pem 
@@ -45,7 +45,8 @@ mv ${user}-key2.pem ${user}-key.pem
 # Echo things back to the user
 echo -e "\r\n"
 echo -e "The ${user} key and signing certificate have been created and converted into PEM format. You should now"
-echo -e "copy the certificate below to paste (or upload directly) into your AWS account security credentials:"
+echo -e "copy the certificate below to paste (or upload directly) into your AWS account security credentials."
+echo -e "Keep the private key in a secure location and do not share it with anyone else."
 echo -e "\r\n\r\n"
 cat ${user}-cert.pem
 echo -e "\r\n\r\n"
