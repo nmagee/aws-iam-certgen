@@ -22,6 +22,7 @@ if [ -z ${path} ]
 then
   cd ./
 else
+  mkdir -p ${path}
   cd ${path}
 fi
 
